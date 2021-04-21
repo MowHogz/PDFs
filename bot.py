@@ -4,6 +4,7 @@ from telegram import Bot
 import requests
 
 
+
 class simple_bot:
     def __init__(self,token,default_client = False):
         self.bot = Bot(token)
@@ -48,7 +49,7 @@ class BotHandler:
 
     def send_message(self, chat_id, text):
 
-        self.bot.send_message(chat_id, text)
+        return self.bot.send_message(chat_id, text)
 
     def get_first_update(self): #i think this serves no purpose
         get_result = self.get_updates()

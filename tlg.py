@@ -10,8 +10,7 @@ import datetime
 from manager import user_manager
 import json
 from setup import setter
-
-
+from telegram import InlineKeyboardButton
 
 welcome_message = """
 ***Wecome to sample tlg bot"""
@@ -142,7 +141,6 @@ def main():
 
 
 
-
                     else:
                         pass
 
@@ -173,6 +171,28 @@ def main():
                         if False: #reason to reset user 
                             pass    #reset user and stuff
                         else:
+                            from telegram import KeyboardButton , ReplyKeyboardMarkup
+                            
+                            but1 = KeyboardButton("Up")
+                            but2 = KeyboardButton("Down")
+                            but3 = KeyboardButton("Right")
+                            but4 = KeyboardButton("Left")
+                            keyboard = ReplyKeyboardMarkup([[but1, but2, but3, but4]])
+                            
+                            
+                            
+                            #ReplyKeyboardMarkup()
+                        
+                            client.send("Chocolate2")
+                            
+                            magnito_bot.bot.send_message(client.id, "Hello There!", reply_markup = keyboard)
+                            #comm = BotCommand("asdf","this")
+                            #client.send("Successfully defined asdf ")
+                            #magnito_bot.bot.setMyCommands([comm])
+                            #client.send("Some More Chocolate")
+                            #magnito_bot.bot.setMyCommands([comm])
+                            
+                            
                             print ("Client info:")
                             print (client.id)
                             client.run(message)
