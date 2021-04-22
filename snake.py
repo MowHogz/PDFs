@@ -16,7 +16,7 @@ class snake:
         self.body = [[0,0]]
     def game(self):
         while True:
-            time.sleep(0.25)
+            time.sleep(0.1)
             if not self.run():
                 return False       
             self.score += 1         
