@@ -22,8 +22,10 @@ class user:
         
     def run(self, message):
         if self.count > 0:
-            print ("\n\n\n\n\n")
-            
+            if message == "Right":
+                self.snake = snake(10,10,"Ruby", self)
+                self.snake.t.start()
+                self.send("Good Game!\n Press Right to start again")
             self.snake.direction = message
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
         else: 

@@ -172,20 +172,25 @@ def main():
                             pass    #reset user and stuff
                         else:
                             from telegram import KeyboardButton , ReplyKeyboardMarkup
+                            from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+
+                            butt1 = InlineKeyboardButton("Left")
+                            butt2 = InlineKeyboardButton("Right")
                             
-                            but1 = KeyboardButton("Up")
+                            but1 = KeyboardButton("Left")
                             but2 = KeyboardButton("Down")
-                            but3 = KeyboardButton("Right")
-                            but4 = KeyboardButton("Left")
-                            keyboard = ReplyKeyboardMarkup([[but1, but2, but3, but4]])
-                            
+                            but3 = KeyboardButton("Up")
+                            but4 = KeyboardButton("Right")
+
+                            #keyboard = ReplyKeyboardMarkup([[but1, but2, but3, but4]])
+                            keyb = InlineKeyboardMarkup([[butt1,butt2]])
                             
                             
                             #ReplyKeyboardMarkup()
                         
-                            client.send("Chocolate2")
                             
-                            magnito_bot.bot.send_message(client.id, "Hello There!", reply_markup = keyboard)
+                            
+                            magnito_bot.bot.send_message(client.id, "Hello There!")
                             #comm = BotCommand("asdf","this")
                             #client.send("Successfully defined asdf ")
                             #magnito_bot.bot.setMyCommands([comm])
@@ -203,14 +208,14 @@ def main():
                 new_offset = first_update_id + 1
 
 
-try:
+if True:
     if __name__ == '__main__':
         main()
-except KeyboardInterrupt:
-    print ("The bot has shut down due to Keyboard Interruption ")
-    ad_bot.send("The bot has shut down due to Keyboard Interruption ")
-    exit()
-except:
+#except KeyboardInterrupt:
+#    print ("The bot has shut down due to Keyboard Interruption ")
+#    ad_bot.send("The bot has shut down due to Keyboard Interruption ")
+#    exit()
+else:
     print ("The bot has shut down due to unknown reasons which probably need investigation")
     ad_bot.send("The bot has shut down due to unknown reasons which probably need investigation")
     exit()
