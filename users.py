@@ -23,7 +23,7 @@ class user:
         self.board_id = self.send("Good Game!\n Press Right to start again").message_id
         
     def start_new_game(self):
-        self.snake = snake(10,100,"Ruby", self)
+        self.snake = snake(1,200,"Ruby", self)
         self.snake.t.start()
 
     def send(self, message):
