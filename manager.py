@@ -20,10 +20,9 @@ class user_manager:
         
 
     def exists(self,client_info):                   #checks if user exists in database
-        print ("This is the client info ")
-        print (client_info)
         if client_info['id'] in self.current_members:
             return True
+
         else:
             False
     

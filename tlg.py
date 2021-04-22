@@ -1,3 +1,5 @@
+from telegram import KeyboardButton , ReplyKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 # v2.1 - using official Telegram bot (instead of http api thingy)
 # made some changes in the the whole system of getting the user variables
 # v2.1.1 - added a 'crash report' ish thingy
@@ -88,14 +90,20 @@ def main():
                     
                     
                     print (current_update['message'])
-                    if not current_update['message']['text']:
-                        
-                        first_chat_text='New member'
                     
-                    else:
+                    query = False
+                    try:
                         print ("0.5")
                         first_chat_text = current_update['message']['text']
                         print ("1")
+                        
+                    
+                    except:
+                        current_update = current_update['callback_query']
+                        first_chat_text='New member'
+                        print ("This is the new stuff \n\n\n")
+                        query = current_update['data']
+                    
                     first_chat_id = current_update['message']['chat']['id'] #id of sender of current message
                     print ("got chat id")
                     if  current_update['message']['first_name']:
@@ -115,7 +123,9 @@ def main():
                     print (current_update['message']['from'])
                     
                     client_info = current_update['message']['chat']
+                    
                     message = current_update['message'] ['text']
+                    print (message)
                     print("done dealing with all the parameters")
 
 
@@ -129,6 +139,7 @@ def main():
                     print (update_info)
                     new = False 
                     #if this is a new user
+                    print ("Client Info: {} \n\n\n\n Existing Members:".format(client_info))
                     print (manager.current_members)
                     if not manager.exists(client_info):
 
@@ -139,7 +150,7 @@ def main():
                         magnito_bot.send_message(first_chat_id,welcome_message)  #activate 
                         new = True
 
-
+                        count = 0 
 
                     else:
                         pass
@@ -171,17 +182,14 @@ def main():
                         if False: #reason to reset user 
                             pass    #reset user and stuff
                         else:
-                            from telegram import KeyboardButton , ReplyKeyboardMarkup
-                            from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-                            butt1 = InlineKeyboardButton("Left")
-                            butt2 = InlineKeyboardButton("Right")
+                            butt1 = InlineKeyboardButton("Left" , callback_data='1', )
+                            butt2 = InlineKeyboardButton("Right", callback_data='2', )
                             
                             but1 = KeyboardButton("Left")
                             but2 = KeyboardButton("Down")
                             but3 = KeyboardButton("Up")
                             but4 = KeyboardButton("Right")
-
                             #keyboard = ReplyKeyboardMarkup([[but1, but2, but3, but4]])
                             keyb = InlineKeyboardMarkup([[butt1,butt2]])
                             
@@ -189,8 +197,11 @@ def main():
                             #ReplyKeyboardMarkup()
                         
                             
+                            #magnito_bot.bot.editMessageReplyMarkup(client.id, client.board_id, reply_markup = InlineKeyboardMarkup([[
+                            #    InlineKeyboardButton("Right", callback_data='2'),
+                            #    InlineKeyboardButton("Left" , callback_data='1') ]]))
                             
-                            magnito_bot.bot.send_message(client.id, "Hello There!")
+                            
                             #comm = BotCommand("asdf","this")
                             #client.send("Successfully defined asdf ")
                             #magnito_bot.bot.setMyCommands([comm])
@@ -200,6 +211,8 @@ def main():
                             
                             print ("Client info:")
                             print (client.id)
+                            if query: 
+                                message = query
                             client.run(message)
 
                 else:

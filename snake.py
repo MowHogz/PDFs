@@ -1,5 +1,6 @@
 import time 
 import threading 
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 class snake: 
     def __init__(self, height, width, name, user): 
         self.height = height 
@@ -21,18 +22,25 @@ class snake:
             self.score += 1         
             text = self.display()
             #self.user.send(text)
-            self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id)
+            
+
+            self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id, reply_markup = InlineKeyboardMarkup([[
+                                InlineKeyboardButton("←", callback_data='l'),
+                                InlineKeyboardButton("↑", callback_data='u'),
+                                InlineKeyboardButton("↓", callback_data='d'),
+                                InlineKeyboardButton("➜" , callback_data='r') ]]))
             #self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id)
             #print ("Height", self.height, "Name", self.name)
+        self.user.send("Good Game!\n Press Right to start again")
 
     def update_direction(self):
-        if self.direction == "Right":
+        if self.direction == "r":
             self.d = "r"
-        elif self.direction == "Left":
+        elif self.direction == "l":
             self.d = "l"
-        elif self.direction == "Up":
+        elif self.direction == "u":
             self.d = "u"
-        elif self.direction == "Down":
+        else:
             self.d = "d"
 
     def run(self): 

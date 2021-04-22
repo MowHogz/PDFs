@@ -16,6 +16,7 @@ class user:
         self.download = download(self.location)
         self.snake = snake(10,10,"Ruby", self)
 
+        self.board_id = self.send("This is gonna be the board game").message_id
         self.count = 0
     def send(self, message):
         return self.manager.bot.send_message(self.id, message)
@@ -25,15 +26,14 @@ class user:
             if message == "Right":
                 self.snake = snake(10,10,"Ruby", self)
                 self.snake.t.start()
-                self.send("Good Game!\n Press Right to start again")
+                
             self.snake.direction = message
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
         else: 
             
             self.count += 1
             
-            self.send("The bot has received message number " + str(self.count))
-            self.board_id = self.send("This is gonna be the board game").message_id
+            
             
             print (self.board_id)
             
