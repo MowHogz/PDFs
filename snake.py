@@ -31,7 +31,8 @@ class snake:
                                 InlineKeyboardButton("➜" , callback_data='r') ]]))
             #self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id)
             #print ("Height", self.height, "Name", self.name)
-        self.user.send("Good Game!\n Press Right to start again")
+        self.user.reset()
+        
 
     def update_direction(self):
         if self.direction == "r":

@@ -14,18 +14,24 @@ class user:
         self.id = client_info['id']
         self.location = location
         self.download = download(self.location)
-        self.snake = snake(10,10,"Ruby", self)
+        
+        self.reset()
 
-        self.board_id = self.send("This is gonna be the board game").message_id
-        self.count = 0
+    def reset(self):
+        self.count = 0 
+        
+        self.board_id = self.send("Good Game!\n Press Right to start again").message_id
+        
+    def start_new_game(self):
+        self.snake = snake(10,10,"Ruby", self)
+        self.snake.t.start()
+
     def send(self, message):
         return self.manager.bot.send_message(self.id, message)
         
     def run(self, message):
         if self.count > 0:
-            if message == "Right":
-                self.snake = snake(10,10,"Ruby", self)
-                self.snake.t.start()
+            self.start_new_game()
                 
             self.snake.direction = message
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
