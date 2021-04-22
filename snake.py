@@ -16,7 +16,7 @@ class snake:
         self.body = [[0,0]]
     def game(self):
         while True:
-            time.sleep(0.02)
+            time.sleep(0.1)
             if not self.run():
                 return False       
             self.score += 1         
@@ -113,7 +113,7 @@ def printer(matrix):
         text += "\n"
         for column in range(len(matrix[0])):
             if matrix[row][column] == ' ':
-                text += "  "
+                text += "   "
             else: 
                 text += matrix[row][column]
     return text
