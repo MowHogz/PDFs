@@ -40,7 +40,7 @@ class user:
                 
 
             self.manager.bot.bot.edit_message_text(
-                    self.snake.d, self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("←", callback_data='l'), InlineKeyboardButton("↑", callback_data='u'), InlineKeyboardButton("↓", callback_data='d'),InlineKeyboardButton("➜" , callback_data='r') ]]) )
+                    self.d, self.id, self.user.another_message, reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("←", callback_data='l'), InlineKeyboardButton("↑", callback_data='u'), InlineKeyboardButton("↓", callback_data='d'),InlineKeyboardButton("➜" , callback_data='r') ]]) )
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
         else: 
             
