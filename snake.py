@@ -84,6 +84,8 @@ class snake:
 
         #if collides 
         if y > self.height or y < 0 or x > self.width or x < 0 : 
+            print ("very dangerous ")
+            exit()
             return False 
 
         #if new locatin is safe 
