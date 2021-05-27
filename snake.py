@@ -100,16 +100,21 @@ class snake:
 
         pass
     def display(self):
-        mat = creator(self.height, self.width, '‏‏‎ ‎')
+        try:
 
-        for unit in self.body:
-            mat[unit[0]][unit[1]] = 'X'
-        
-        text = "Score: {}".format(self.score)
-        text += printer(mat)
-        #print (text)
+            mat = creator(self.height, self.width, '‏‏‎ ‎')
 
-        return text
+            for unit in self.body:
+                mat[unit[0]][unit[1]] = 'X'
+            
+            text = "Score: {}".format(self.score)
+            text += printer(mat)
+            #print (text)
+
+            self.stf = text
+            return text
+        except:
+            print (self.stf)
 
 def printer(matrix):
     text = ""
