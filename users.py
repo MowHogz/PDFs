@@ -19,7 +19,7 @@ class user:
 
     def reset(self):
         self.count = 0 
-        
+        self.another_message = self.send("This messsage should indicate what's going on, I think").message_id
         self.board_id = self.send("Good Game!\n Press Right to start again").message_id
         
     def start_new_game(self):
@@ -39,7 +39,7 @@ class user:
             
             self.count += 1
             
-            
+            self.manager.bot.bot.edit_message_text(text, self.id, self.another_message )
             
             print (self.board_id)
             
