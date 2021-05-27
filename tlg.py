@@ -121,7 +121,6 @@ def main():
                     else:
                         first_chat_name = "unknown"
                         #print ("4")
-                    print ("i got here")
 
                     #print (current_update['message']['from'])
                     
@@ -129,6 +128,7 @@ def main():
                     
                     message = current_update['message'] ['text']
                     print (message)
+                    print ("i got here")
                     #print("done dealing with all the parameters")
 
 
