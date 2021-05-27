@@ -76,6 +76,7 @@ def main():
         #print(new_offset)
         print ("hello world ")
         if len(all_updates) > 0:                    #when there is an update 
+            print ("we got updates and stuff and yonatan massaging")
             for current_update in all_updates:      
                 
                 if True:                            #try
