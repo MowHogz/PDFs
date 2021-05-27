@@ -19,8 +19,8 @@ class snake:
         while self.alive:
             time.sleep(0.1)
             if not self.run():
-                self.alive = False
-                
+                #self.alive = False
+                return False
             self.score += 1         
             text = self.display()
             #self.user.send(text)
