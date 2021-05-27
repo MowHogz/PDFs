@@ -19,7 +19,7 @@ class user:
 
     def reset(self):
         self.count = 0 
-        self.another_message = self.send("This messsage should indicate what's going on, I think").message_id
+        
         self.board_id = self.send("Good Game!\n Press Right to start again").message_id
         
     def start_new_game(self):
@@ -32,6 +32,7 @@ class user:
     def run(self, message):
         if self.count == 0:
             self.count += 1
+            self.another_message = self.send("This messsage should indicate what's going on, I think").message_id
             self.start_new_game()
                 
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
@@ -40,7 +41,8 @@ class user:
             self.count += 1
             
             try:
-                self.manager.bot.bot.edit_message_text("Indication and", self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[
+                self.manager.bot.bot.edit_message_text(
+                    "Indication and", self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[
                                 InlineKeyboardButton("←", callback_data='l'),
                                 InlineKeyboardButton("↑", callback_data='u'),
                                 InlineKeyboardButton("↓", callback_data='d'),
