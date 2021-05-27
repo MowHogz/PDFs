@@ -83,7 +83,7 @@ class snake:
         x = head[1]
 
         #if collides 
-        if y > self.height or y < 0 or x > self.width or x < 0 : 
+        if y >= self.height or y < 0 or x > self.width or x < 0 : 
             print ("very dangerous ")
             exit()
             return False 
