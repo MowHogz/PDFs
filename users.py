@@ -46,7 +46,8 @@ class user:
                                 InlineKeyboardButton("↓", callback_data='d'),
                                 InlineKeyboardButton("➜" , callback_data='r') ]]) )
             except:
-                pass
+                print ("big freaking error")
+                exit()
             
             self.snake.direction = message
             #print (self.board_id)
