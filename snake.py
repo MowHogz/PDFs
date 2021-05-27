@@ -45,7 +45,7 @@ class snake:
             self.d = "d"
 
     def run(self): 
-        print ("Chocolate")
+        #print ("Chocolate")
         head = self.body[0]
         new_head = head[:]
         self.update_direction()
@@ -103,7 +103,7 @@ class snake:
         
         text = "Score: {}".format(self.score)
         text += printer(mat)
-        print (text)
+        #print (text)
 
         return text
 
