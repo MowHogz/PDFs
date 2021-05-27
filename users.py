@@ -40,7 +40,11 @@ class user:
             self.count += 1
             
             try:
-                self.manager.bot.bot.edit_message_text("Indication and", self.id, self.another_message )
+                self.manager.bot.bot.edit_message_text("Indication and", self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[
+                                InlineKeyboardButton("←", callback_data='l'),
+                                InlineKeyboardButton("↑", callback_data='u'),
+                                InlineKeyboardButton("↓", callback_data='d'),
+                                InlineKeyboardButton("➜" , callback_data='r') ]]) )
             except:
                 pass
             

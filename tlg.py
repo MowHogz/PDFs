@@ -127,7 +127,7 @@ def main():
                     client_info = current_update['message']['chat']
                     
                     message = current_update['message'] ['text']
-                    print (message)
+                    #print (message)
                     print ("i got here")
                     #print("done dealing with all the parameters")
 

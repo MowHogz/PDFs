@@ -24,11 +24,7 @@ class snake:
             #self.user.send(text)
             
 
-            self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id, reply_markup = InlineKeyboardMarkup([[
-                                InlineKeyboardButton("←", callback_data='l'),
-                                InlineKeyboardButton("↑", callback_data='u'),
-                                InlineKeyboardButton("↓", callback_data='d'),
-                                InlineKeyboardButton("➜" , callback_data='r') ]]))
+            self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id)
             #self.user.manager.bot.bot.edit_message_text(text, self.user.id, self.user.board_id)
             #print ("Height", self.height, "Name", self.name)
         self.user.reset()
