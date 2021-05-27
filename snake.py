@@ -48,7 +48,8 @@ class snake:
         head = self.body[0]
         new_head = head[:]
         self.update_direction()
-
+        self.user.manager.bot.bot.edit_message_text(
+                    self.snake.d, self.id, self.another_message)
 
         if self.d == "r":
             new_head[1] += 1
