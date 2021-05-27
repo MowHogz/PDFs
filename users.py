@@ -45,7 +45,7 @@ class user:
             try:
                 print ("i got here")
                 self.manager.bot.bot.edit_message_text(
-                    "Indication and", self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("←", callback_data='l'), InlineKeyboardButton("↑", callback_data='u'), InlineKeyboardButton("↓", callback_data='d'),InlineKeyboardButton("➜" , callback_data='r') ]]) )
+                    self.snake.d, self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("←", callback_data='l'), InlineKeyboardButton("↑", callback_data='u'), InlineKeyboardButton("↓", callback_data='d'),InlineKeyboardButton("➜" , callback_data='r') ]]) )
             except:
                 print ("big freaking error")
                 exit()
