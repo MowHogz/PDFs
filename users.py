@@ -38,7 +38,7 @@ class user:
             
             self.count += 1
             
-            self.manager.bot.bot.edit_message_text(self.count, self.id, self.another_message )
+            self.manager.bot.bot.edit_message_text("Indication and", self.id, self.another_message )
             
             self.snake.direction = message
             #print (self.board_id)
