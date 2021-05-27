@@ -72,9 +72,9 @@ def main():
 
     while True: #for the rest of eternity 
         print("on loop")
-        all_updates=magnito_bot.get_updates(new_offset, timeout=1)
+        all_updates=magnito_bot.get_updates(new_offset, timeout=2)
         #print(new_offset)
-        print ("hello world massage")
+        print ("hello world massage changed timeout")
         if len(all_updates) > 0:                    #when there is an update 
             print ("we got updates and stuff and yonatan massaging")
             for current_update in all_updates:      
