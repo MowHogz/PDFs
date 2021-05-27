@@ -14,11 +14,13 @@ class snake:
         self.mat = creator(self.height, self.width, ' ')
         print ("This is me ")
         self.body = [[0,0]]
+        self.alive = True
     def game(self):
-        while True:
+        while self.alive:
             time.sleep(0.1)
             if not self.run():
-                return False       
+                self.alive = False
+                
             self.score += 1         
             text = self.display()
             #self.user.send(text)
