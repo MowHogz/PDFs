@@ -91,7 +91,7 @@ def main():
                     first_update_id = current_update.update_id
                     
                     
-                    print (current_update['message'])
+                    #print (current_update['message'])
                     
                     query = False
                     try:
@@ -101,6 +101,7 @@ def main():
                         
                     
                     except:
+                        print ("for some reason we crashed over here")
                         current_update = current_update['callback_query']
                         first_chat_text='New member'
                         #print ("This is the new stuff \n\n\n")
