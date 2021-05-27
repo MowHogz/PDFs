@@ -30,7 +30,7 @@ class user:
         return self.manager.bot.send_message(self.id, message)
         
     def run(self, message):
-        if self.count > 0:
+        if self.count == 0:
             self.start_new_game()
                 
             self.snake.direction = message
