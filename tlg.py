@@ -74,7 +74,7 @@ def main():
         print("on loop")
         all_updates=magnito_bot.get_updates(new_offset, timeout=10)
         #print(new_offset)
-        print ("hello world ")
+        print ("hello world massage")
         if len(all_updates) > 0:                    #when there is an update 
             print ("we got updates and stuff and yonatan massaging")
             for current_update in all_updates:      
