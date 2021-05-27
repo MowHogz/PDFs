@@ -33,7 +33,6 @@ class user:
         if self.count == 0:
             self.start_new_game()
                 
-            self.snake.direction = message
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
         else: 
             
@@ -41,7 +40,8 @@ class user:
             
             self.manager.bot.bot.edit_message_text(self.count, self.id, self.another_message )
             
-            print (self.board_id)
+            self.snake.direction = message
+            #print (self.board_id)
             
             #self.snake.run(message)
             
