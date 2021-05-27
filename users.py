@@ -31,6 +31,7 @@ class user:
         
     def run(self, message):
         if self.count == 0:
+            self.count += 1
             self.start_new_game()
                 
             #self.manager.bot.edit_message_text(text, self.id, self.board_id)
