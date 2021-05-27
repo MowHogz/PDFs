@@ -19,6 +19,9 @@ class user:
 
     def reset(self):
         self.count = 0 
+        print (self.count)
+        print ("that was self.count")
+        exit()
         
         self.board_id = self.send("Good Game!\n Press Right to start again").message_id
         
