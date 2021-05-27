@@ -103,32 +103,32 @@ def main():
                     except:
                         current_update = current_update['callback_query']
                         first_chat_text='New member'
-                        print ("This is the new stuff \n\n\n")
+                        #print ("This is the new stuff \n\n\n")
                         query = current_update['data']
                     
                     first_chat_id = current_update['message']['chat']['id'] #id of sender of current message
-                    print ("got chat id")
+                    #print ("got chat id")
                     if  current_update['message']['first_name']:
-                        print ("2")
+                        #print ("2")
                         first_chat_name = current_update['message']['chat']['first_name']
                     elif   current_update['message']['new_chat_member']:
-                        print ("3")
+                        #print ("3")
                         first_chat_name = current_update['message']['new_chat_member']['username']
                     elif   current_update['message']['from']:
-                        print ("3.5")
+                        #print ("3.5")
                         first_chat_name = current_update['message']['from']['first_name']
                     else:
                         first_chat_name = "unknown"
-                        print ("4")
-                    print ("i got here")
+                        #print ("4")
+                    #print ("i got here")
 
-                    print (current_update['message']['from'])
+                    #print (current_update['message']['from'])
                     
                     client_info = current_update['message']['chat']
                     
                     message = current_update['message'] ['text']
                     print (message)
-                    print("done dealing with all the parameters")
+                    #print("done dealing with all the parameters")
 
 
 
@@ -138,11 +138,11 @@ def main():
                      """.format( time.strftime("%d %H:%M:%S") , first_chat_name, first_chat_id, message))
 
                     #magnito_bot.logger(update_info)
-                    print (update_info)
+                    #print (update_info)
                     new = False 
                     #if this is a new user
-                    print ("Client Info: {} \n\n\n\n Existing Members:".format(client_info))
-                    print (manager.current_members)
+                    #print ("Client Info: {} \n\n\n\n Existing Members:".format(client_info))
+                    #print (manager.current_members)
                     if not manager.exists(client_info):
 
                         print ("adding new user")
@@ -158,7 +158,7 @@ def main():
                         pass
 
                     #if this is a 'regestered' client proceed with normal stuff normal clients do 
-                    print (client_info)
+                    #print (client_info)
                     client = manager.current_members[client_info['id']]
                     if new: client.send("This is a Very Beta version of the bot, please be gentle and DM me if you find any bugs :)")
                     else: pass
