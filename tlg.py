@@ -106,9 +106,7 @@ def main():
                         first_chat_text='New member'
                         #print ("This is the new stuff \n\n\n")
                         query = current_update['data']
-                        print ("\n\n\n\n\n\n\n\n")
-                        print (query)
-                        print ("query")
+                        
                     
                     first_chat_id = current_update['message']['chat']['id'] #id of sender of current message
                     #print ("got chat id")
@@ -219,6 +217,9 @@ def main():
                             print (client.id)
                             if query: 
                                 message = query
+                            print ("\n\n\n\n\n\n\n\n")
+                            print ("message")
+                            print (message)
                             client.run(message)
 
                 else:
