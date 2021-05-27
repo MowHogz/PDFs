@@ -52,7 +52,7 @@ class snake:
             self.user.manager.bot.bot.edit_message_text(
                     self.d, self.user.id, self.user.another_message)
         except:
-            passasdf
+            pass
         if self.d == "r":
             new_head[1] += 1
         
