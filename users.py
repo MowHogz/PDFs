@@ -19,9 +19,7 @@ class user:
 
     def reset(self):
         self.count = 0 
-        print (self.count)
-        print ("that was self.count")
-        exit()
+
         
         self.board_id = self.send("Good Game!\n Press Right to start again").message_id
         
@@ -43,14 +41,15 @@ class user:
             
             self.count += 1
             
-            try:
+            if True:
+                print ("i got here")
                 self.manager.bot.bot.edit_message_text(
                     "Indication and", self.id, self.another_message, reply_markup = InlineKeyboardMarkup([[
                                 InlineKeyboardButton("←", callback_data='l'),
                                 InlineKeyboardButton("↑", callback_data='u'),
                                 InlineKeyboardButton("↓", callback_data='d'),
                                 InlineKeyboardButton("➜" , callback_data='r') ]]) )
-            except:
+            else:
                 print ("big freaking error")
                 exit()
             
