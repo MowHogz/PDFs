@@ -31,6 +31,7 @@ class snake:
         
 
     def update_direction(self):
+        print (self.direction)
         if self.direction == "r":
             self.d = "r"
         elif self.direction == "l":

@@ -33,6 +33,7 @@ class user:
         
     def run(self, message):
         if self.count == 0:
+            #first round 
             self.count += 1
             self.another_message = self.send("This messsage should indicate what's going on, I think").message_id
             self.start_new_game()
