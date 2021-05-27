@@ -48,7 +48,7 @@ class user:
             
             try:
                 print ("i got here")
-                print (self.snake.d)
+                print (self.d)
 
                 #self.manager.bot.bot.edit_message_text(self.snake.d, self.id, self.another_message)
             except:
