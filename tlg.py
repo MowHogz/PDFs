@@ -193,7 +193,7 @@ def main():
                             but3 = KeyboardButton("Up")
                             but4 = KeyboardButton("Right")
                             #keyboard = ReplyKeyboardMarkup([[but1, but2, but3, but4]])
-                            keyb = InlineKeyboardMarkup([[butt1,butt2]])
+                            #keyb = InlineKeyboardMarkup([[butt1,butt2]])
                             
                             
                             #ReplyKeyboardMarkup()
