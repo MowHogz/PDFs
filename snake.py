@@ -15,6 +15,7 @@ class snake:
         print ("This is me ")
         self.body = [[0,0]]
         self.alive = True
+    
     def game(self):
         while self.alive:
             time.sleep(0.1)
@@ -50,7 +51,7 @@ class snake:
         self.update_direction()
         try:
             self.user.manager.bot.bot.edit_message_text(
-                    self.d, self.user.id, self.user.another_message)
+                    self.d, self.user.id, self.user.another_message, reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("←", callback_data='l'), InlineKeyboardButton("↑", callback_data='u'), InlineKeyboardButton("↓", callback_data='d'),InlineKeyboardButton("➜" , callback_data='r') ]]) )
         except:
             pass
         if self.d == "r":
@@ -83,7 +84,7 @@ class snake:
         x = head[1]
 
         #if collides 
-        if y >= self.height or y < 0 or x > self.width or x < 0 : 
+        if y >= self.height or y < 0 or x >= self.width or x < 0 : 
             print ("very dangerous ")
             exit()
             return False 
@@ -100,21 +101,18 @@ class snake:
 
         pass
     def display(self):
-        try:
 
-            mat = creator(self.height, self.width, '‏‏‎ ‎')
+        mat = creator(self.height, self.width, '‏‏‎ ‎')
 
-            for unit in self.body:
-                mat[unit[0]][unit[1]] = 'X'
-            
-            text = "Score: {}".format(self.score)
-            text += printer(mat)
-            #print (text)
+        for unit in self.body:
+            mat[unit[0]][unit[1]] = 'X'
+        
+        text = "Score: {}".format(self.score)
+        text += printer(mat)
+        #print (text)
 
-            self.stf = text
-            return text
-        except:
-            print (self.stf)
+        return text
+    
 
 def printer(matrix):
     text = ""
